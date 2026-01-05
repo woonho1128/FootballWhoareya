@@ -1,0 +1,392 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  min-height: 100vh;
+  color: #fff;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.subtitle {
+  color: #8892b0;
+  font-size: 1.1rem;
+}
+
+/* 리그 선택 화면 */
+.league-select {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.league-select h2 {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  color: #8892b0;
+}
+
+.league-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.league-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px 20px;
+  background: linear-gradient(135deg, #1a2744 0%, #0f1624 100%);
+  border: 2px solid #3d5a80;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.league-btn:hover {
+  border-color: #64ffda;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(100, 255, 218, 0.2);
+}
+
+.league-icon {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.league-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* 게임 화면 */
+.game-screen.hidden {
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.current-league {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  padding: 10px;
+  background: #1a2744;
+  border-radius: 10px;
+}
+
+.current-league span {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #64ffda;
+}
+
+#change-league-btn {
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  background: transparent;
+  border: 1px solid #3d5a80;
+  color: #8892b0;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+#change-league-btn:hover {
+  border-color: #64ffda;
+  color: #64ffda;
+}
+
+.game-info {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+.game-info strong {
+  color: #64ffda;
+}
+
+.input-container {
+  position: relative;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#player-input {
+  flex: 1;
+  padding: 15px 20px;
+  font-size: 1rem;
+  border: 2px solid #3d5a80;
+  border-radius: 8px;
+  background: #0f1624;
+  color: #fff;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+#player-input:focus {
+  border-color: #64ffda;
+}
+
+#player-input::placeholder {
+  color: #5a6a8a;
+}
+
+#guess-btn {
+  padding: 15px 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  background: linear-gradient(135deg, #64ffda 0%, #48c9b0 100%);
+  color: #1a1a2e;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#guess-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(100, 255, 218, 0.4);
+}
+
+#guess-btn:disabled {
+  background: #3d5a80;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.autocomplete-items {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 70px;
+  background: #1a2744;
+  border: 1px solid #3d5a80;
+  border-radius: 0 0 8px 8px;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 100;
+  display: none;
+}
+
+.autocomplete-items.show {
+  display: block;
+}
+
+.autocomplete-item {
+  padding: 12px 20px;
+  cursor: pointer;
+  border-bottom: 1px solid #2d3e5f;
+  transition: background 0.2s;
+}
+
+.autocomplete-item:last-child {
+  border-bottom: none;
+}
+
+.autocomplete-item:hover,
+.autocomplete-item.active {
+  background: #2d4a6f;
+}
+
+.autocomplete-item .player-team {
+  font-size: 0.85rem;
+  color: #8892b0;
+  margin-left: 10px;
+}
+
+.table-container {
+  overflow-x: auto;
+  margin-bottom: 30px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #0f1624;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+thead {
+  background: #1a2744;
+}
+
+th {
+  padding: 15px 10px;
+  text-align: center;
+  font-weight: 600;
+  color: #8892b0;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+td {
+  padding: 12px 10px;
+  text-align: center;
+  font-weight: 500;
+  border-bottom: 1px solid #1a2744;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.cell {
+  padding: 8px 12px;
+  border-radius: 6px;
+  display: inline-block;
+  min-width: 60px;
+  font-size: 0.9rem;
+}
+
+.correct {
+  background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+  color: #fff;
+}
+
+.close {
+  background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+  color: #fff;
+}
+
+.wrong {
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+  color: #fff;
+}
+
+.arrow {
+  font-size: 0.8rem;
+  margin-left: 3px;
+}
+
+.game-result {
+  text-align: center;
+  padding: 30px;
+  background: #1a2744;
+  border-radius: 15px;
+  margin-top: 20px;
+}
+
+.game-result.hidden {
+  display: none;
+}
+
+#result-message {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+#result-message .answer {
+  color: #64ffda;
+  font-weight: bold;
+}
+
+#result-message.win {
+  color: #2ecc71;
+}
+
+#result-message.lose {
+  color: #e74c3c;
+}
+
+#play-again-btn {
+  padding: 15px 40px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  background: linear-gradient(135deg, #64ffda 0%, #48c9b0 100%);
+  color: #1a1a2e;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#play-again-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(100, 255, 218, 0.4);
+}
+
+/* 반응형 */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  .input-container {
+    flex-direction: column;
+  }
+
+  #guess-btn {
+    width: 100%;
+  }
+
+  .autocomplete-items {
+    right: 0;
+  }
+
+  th, td {
+    padding: 10px 5px;
+    font-size: 0.8rem;
+  }
+
+  .cell {
+    padding: 6px 8px;
+    min-width: 50px;
+    font-size: 0.75rem;
+  }
+}
+
+/* 스크롤바 스타일 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a2744;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3d5a80;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4a6fa5;
+}

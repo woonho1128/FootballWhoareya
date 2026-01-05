@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Who Are Ya? - 축구 선수 맞추기</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>⚽ Who Are Ya?</h1>
+      <p class="subtitle">축구 선수를 맞춰보세요!</p>
+    </header>
+
+    <!-- 리그 선택 화면 -->
+    <div id="league-select" class="league-select">
+      <h2>리그를 선택하세요</h2>
+      <div class="league-buttons">
+        <button class="league-btn" data-league="프리미어리그">
+          <span class="league-icon">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span>
+          <span class="league-name">프리미어리그</span>
+        </button>
+        <button class="league-btn" data-league="라리가">
+          <span class="league-icon">🇪🇸</span>
+          <span class="league-name">라리가</span>
+        </button>
+        <button class="league-btn" data-league="세리에A">
+          <span class="league-icon">🇮🇹</span>
+          <span class="league-name">세리에A</span>
+        </button>
+        <button class="league-btn" data-league="리그1">
+          <span class="league-icon">🇫🇷</span>
+          <span class="league-name">리그1</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- 게임 화면 -->
+    <div id="game-screen" class="game-screen hidden">
+      <div class="current-league">
+        <span id="current-league-name"></span>
+        <button id="change-league-btn">리그 변경</button>
+      </div>
+
+      <div class="game-info">
+        <span id="attempts">남은 기회: <strong>8</strong></span>
+      </div>
+
+      <div class="input-container">
+        <input
+          type="text"
+          id="player-input"
+          placeholder="선수 이름을 입력하세요..."
+          autocomplete="off"
+        >
+        <button id="guess-btn">추측</button>
+        <div id="autocomplete-list" class="autocomplete-items"></div>
+      </div>
+
+      <div class="table-container">
+        <table id="guesses-table">
+          <thead>
+            <tr>
+              <th>선수</th>
+              <th>국적</th>
+              <th>팀</th>
+              <th>포지션</th>
+              <th>출생년도</th>
+              <th>등번호</th>
+            </tr>
+          </thead>
+          <tbody id="guesses-body">
+          </tbody>
+        </table>
+      </div>
+
+      <div id="game-result" class="game-result hidden">
+        <div id="result-message"></div>
+        <button id="play-again-btn">다시 하기</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="players.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
