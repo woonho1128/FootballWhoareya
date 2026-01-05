@@ -33,6 +33,73 @@ header h1 {
   font-size: 1.1rem;
 }
 
+/* 모드 선택 화면 */
+.mode-select {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.mode-select h2 {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  color: #8892b0;
+}
+
+.mode-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.mode-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 50px;
+  background: linear-gradient(135deg, #1a2744 0%, #0f1624 100%);
+  border: 2px solid #3d5a80;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mode-btn:hover {
+  border-color: #64ffda;
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(100, 255, 218, 0.25);
+}
+
+.mode-icon {
+  font-size: 4rem;
+  margin-bottom: 15px;
+}
+
+.mode-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* 뒤로가기 버튼 */
+.back-btn {
+  margin-top: 30px;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  background: transparent;
+  border: 1px solid #3d5a80;
+  color: #8892b0;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.back-btn:hover {
+  border-color: #64ffda;
+  color: #64ffda;
+}
+
 /* 리그 선택 화면 */
 .league-select {
   text-align: center;
@@ -346,6 +413,20 @@ tbody tr:last-child td {
 @media (max-width: 600px) {
   header h1 {
     font-size: 1.8rem;
+  }
+
+  .mode-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mode-btn {
+    padding: 30px 60px;
+    width: 80%;
+  }
+
+  .mode-icon {
+    font-size: 3rem;
   }
 
   .input-container {
