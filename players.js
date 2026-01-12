@@ -30,7 +30,6 @@ const allPlayers = {
     { name: "Rico Lewis", nameKo: "리코 루이스", nationality: "잉글랜드", team: "맨체스터 시티", position: "DF", birthYear: 2004, number: 82 },
     // 리버풀
     // 리버풀 FC 최종 스쿼드
-    [
   { name: "Alisson Becker", nameKo: "알리송 베케르", nationality: "브라질", team: "리버풀", position: "GK", birthYear: 1992, number: 1 },
   { name: "Joe Gomez", nameKo: "조 고메즈", nationality: "잉글랜드", team: "리버풀", position: "DF", birthYear: 1997, number: 2 },
   { name: "Wataru Endo", nameKo: "엔도 와타루", nationality: "일본", team: "리버풀", position: "MF", birthYear: 1993, number: 3 },
