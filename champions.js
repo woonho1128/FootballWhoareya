@@ -212,7 +212,7 @@ const champions = [
   { name: "Yone", nameKo: "요네", region: "아이오니아", role: "암살자", range: "근거리", resource: "없음", releaseYear: 2020 },
   { name: "Yorick", nameKo: "요릭", region: "그림자 군도", role: "전사", range: "근거리", resource: "마나", releaseYear: 2011 },
   { name: "Yuumi", nameKo: "유미", region: "반들시티", role: "서포터", range: "원거리", resource: "마나", releaseYear: 2019 },
-
+  { name: "Yunara", nameKo: "유나라", region: "아이오니아", role: "원거리딜러", range: "원거리", resource: "마나", releaseYear: 2025 },
   // Z
   { name: "Zac", nameKo: "자크", region: "자운", role: "탱커", range: "근거리", resource: "체력", releaseYear: 2013 },
   { name: "Zed", nameKo: "제드", region: "아이오니아", role: "암살자", range: "근거리", resource: "기력", releaseYear: 2012 },
@@ -220,5 +220,6 @@ const champions = [
   { name: "Ziggs", nameKo: "직스", region: "자운", role: "마법사", range: "원거리", resource: "마나", releaseYear: 2012 },
   { name: "Zilean", nameKo: "질리언", region: "룬테라", role: "서포터", range: "원거리", resource: "마나", releaseYear: 2009 },
   { name: "Zoe", nameKo: "조이", region: "타곤", role: "마법사", range: "원거리", resource: "마나", releaseYear: 2017 },
-  { name: "Zyra", nameKo: "자이라", region: "익스탈", role: "마법사", range: "원거리", resource: "마나", releaseYear: 2012 }
+  { name: "Zyra", nameKo: "자이라", region: "익스탈", role: "마법사", range: "원거리", resource: "마나", releaseYear: 2012 },
+  { name: "Zaahen", nameKo: "자헨", region: "룬테라", role: "전사", range: "근거리", resource: "마나", releaseYear: 2025 }
 ];
