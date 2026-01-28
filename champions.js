@@ -110,7 +110,8 @@ const champions = [
   { name: "Miss Fortune", nameKo: "미스 포츈", region: "빌지워터", role: "원거리딜러", range: "원거리", resource: "마나", releaseYear: 2010 },
   { name: "Mordekaiser", nameKo: "모데카이저", region: "녹서스", role: "전사", range: "근거리", resource: "보호막", releaseYear: 2010 },
   { name: "Morgana", nameKo: "모르가나", region: "데마시아", role: "마법사", range: "원거리", resource: "마나", releaseYear: 2009 },
-
+  { name: "Mell medarda", nameKo: "멜 메다르다", region: "녹서스", role: "마법사", range: "원거리", resource: "마나", releaseYear: 2025 },
+  
   // N
   { name: "Naafiri", nameKo: "나피리", region: "슈리마", role: "암살자", range: "근거리", resource: "마나", releaseYear: 2023 },
   { name: "Nami", nameKo: "나미", region: "빌지워터", role: "서포터", range: "원거리", resource: "마나", releaseYear: 2012 },
